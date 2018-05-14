@@ -1,13 +1,7 @@
-
 def bootstrap_this(data):
-
-
-	# YOUR CODE HERE
-
-
-	# return:
-	#	mean value (float)
-	#	error estimate (float)
-	#	means of the each sample drawn (array of floats)
-
-	return value, error, means
+    import numpy as np
+    pick = np.random.choice(data, (len(data), 5000))
+    value = np.mean(data[pick], axis=0)
+    means = np.mean(value)
+    error = np.std(value)
+    return means, error, value
